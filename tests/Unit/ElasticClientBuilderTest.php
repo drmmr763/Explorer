@@ -37,7 +37,7 @@ final class ElasticClientBuilderTest extends MockeryTestCase
             [
                 'connection' => self::CONNECTION
             ],
-            ClientBuilder::create()->setHosts([self::CONNECTION])
+            ClientBuilder::create()->setHosts(self::CONNECTION)
         ];
 
          yield 'elastic cloud id' => [
@@ -59,7 +59,7 @@ final class ElasticClientBuilderTest extends MockeryTestCase
                 ], self::CONNECTION)
             ],
              ClientBuilder::create()
-                 ->setHosts([self::CONNECTION])
+                 ->setHosts(self::CONNECTION)
                  ->setBasicAuthentication('myName', 'myPassword'),
         ];
 
@@ -73,7 +73,7 @@ final class ElasticClientBuilderTest extends MockeryTestCase
                 ], self::CONNECTION)
             ],
              ClientBuilder::create()
-                ->setHosts([self::CONNECTION])
+                ->setHosts(self::CONNECTION)
                 ->setApiKey('myId', 'myKey'),
         ];
 
@@ -84,7 +84,7 @@ final class ElasticClientBuilderTest extends MockeryTestCase
                 ], self::CONNECTION)
             ],
              ClientBuilder::create()
-                ->setHosts([self::CONNECTION])
+                ->setHosts(self::CONNECTION)
                 ->setNodePool(new SimpleNodePool(new RoundRobin(), new ElasticsearchResurrect())),
         ];
 
@@ -107,7 +107,7 @@ final class ElasticClientBuilderTest extends MockeryTestCase
                 ], self::CONNECTION)
             ],
             ClientBuilder::create()
-                ->setHosts([self::CONNECTION])
+                ->setHosts(self::CONNECTION)
                 ->setSSLVerification(false),
         ];
 
@@ -118,7 +118,7 @@ final class ElasticClientBuilderTest extends MockeryTestCase
                 ], self::CONNECTION)
             ],
             ClientBuilder::create()
-                ->setHosts([self::CONNECTION])
+                ->setHosts(self::CONNECTION)
                 ->setSSLVerification(),
         ];
 
@@ -132,7 +132,7 @@ final class ElasticClientBuilderTest extends MockeryTestCase
                 ], self::CONNECTION)
             ],
             ClientBuilder::create()
-                ->setHosts([self::CONNECTION])
+                ->setHosts(self::CONNECTION)
                 ->setSSLCert('path/to/cert.pem', 'passphrase')
                 ->setSSLKey('path/to/key.pem', 'passphrase'),
         ];
@@ -147,7 +147,7 @@ final class ElasticClientBuilderTest extends MockeryTestCase
                 ], self::CONNECTION)
             ],
             ClientBuilder::create()
-                ->setHosts([self::CONNECTION])
+                ->setHosts(self::CONNECTION)
                 ->setSSLCert('path/to/cert.pem')
                 ->setSSLKey('path/to/key.pem'),
         ];
@@ -159,7 +159,7 @@ final class ElasticClientBuilderTest extends MockeryTestCase
                 'connection' => self::CONNECTION,
             ],
             ClientBuilder::create()
-                ->setHosts([self::CONNECTION])
+                ->setHosts(self::CONNECTION)
                 ->setLogger(new NullLogger()),
         ];
 
@@ -170,7 +170,7 @@ final class ElasticClientBuilderTest extends MockeryTestCase
                 'connection' => self::CONNECTION,
             ],
             ClientBuilder::create()
-                ->setHosts([self::CONNECTION]),
+                ->setHosts(self::CONNECTION),
         ];
 
         yield 'without logger' => [
@@ -179,7 +179,7 @@ final class ElasticClientBuilderTest extends MockeryTestCase
                 'connection' => self::CONNECTION,
             ],
             ClientBuilder::create()
-                ->setHosts([self::CONNECTION]),
+                ->setHosts(self::CONNECTION),
         ];
     }
 }

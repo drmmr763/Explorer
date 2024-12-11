@@ -27,7 +27,7 @@ final class ElasticClientBuilder
 
         if (count($hostConnectionProperties)) {
             // only call set hosts if we found hosts in the config
-            $builder->setHosts([$hostConnectionProperties]);
+            $builder->setHosts($hostConnectionProperties);
         }
 
         if ($config->has('explorer.additionalConnections')) {

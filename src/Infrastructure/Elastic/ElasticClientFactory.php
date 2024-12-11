@@ -11,14 +11,14 @@ use GuzzleHttp\Handler\MockHandler;
 
 final class ElasticClientFactory
 {
-    private ClientInterface $client;
+    private Client $client;
 
-    public function __construct(ClientInterface $client)
+    public function __construct(Client $client)
     {
         $this->client = $client;
     }
 
-    public function client(): ClientInterface
+    public function client(): Client
     {
         return $this->client;
     }

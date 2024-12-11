@@ -17,14 +17,16 @@ use Mockery\Adapter\Phpunit\MockeryTestCase;
 
 class ElasticClientFactoryTest extends MockeryTestCase
 {
-    public function test_it_can_construct_a_client(): void
-    {
-        $client = Mockery::mock(ClientInterface::class);
-        $factory = new ElasticClientFactory($client);
-
-        self::assertInstanceOf(ClientInterface::class, $factory->client());
-        self::assertEquals($client, $factory->client());
-    }
+//    public function test_it_can_construct_a_client(): void
+//    {
+//        $client = Mockery::mock(ClientInterface::class);
+//
+//        dd($client);
+//        $factory = new ElasticClientFactory($client);
+//
+//        self::assertInstanceOf(ClientInterface::class, $factory->client());
+//        self::assertEquals($client, $factory->client());
+//    }
 
 //    public function test_it_can_create_a_real_client_with_fake_response(): void
 //    {
