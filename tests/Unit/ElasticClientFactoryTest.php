@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace JeroenG\Explorer\Tests\Unit;
 
-use Elastic\ElasticSearch\Client;
+use Elastic\Elasticsearch\Client;
+use Elastic\Elasticsearch\ClientInterface;
 use JeroenG\Explorer\Application\SearchCommand;
 use JeroenG\Explorer\Domain\Query\Query;
 use JeroenG\Explorer\Domain\Syntax\Compound\BoolQuery;
@@ -18,10 +19,10 @@ class ElasticClientFactoryTest extends MockeryTestCase
 {
     public function test_it_can_construct_a_client(): void
     {
-        $client = Mockery::mock(\Elastic\ElasticSearch\Client::class);
+        $client = Mockery::mock(ClientInterface::class);
         $factory = new ElasticClientFactory($client);
 
-        self::assertInstanceOf(Mockery\MockInterface::class, $factory->client());
+        self::assertInstanceOf(ClientInterface::class, $factory->client());
         self::assertEquals($client, $factory->client());
     }
 

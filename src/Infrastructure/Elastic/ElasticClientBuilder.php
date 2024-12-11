@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace JeroenG\Explorer\Infrastructure\Elastic;
 
-use Elastic\ElasticSearch\ClientBuilder;
+use Elastic\Elasticsearch\ClientBuilder;
 use Elastic\Transport\NodePool\Resurrect\ElasticsearchResurrect;
 use Elastic\Transport\NodePool\Selector\SelectorInterface;
 use Elastic\Transport\NodePool\SimpleNodePool;
@@ -15,9 +15,9 @@ final class ElasticClientBuilder
 {
     private const HOST_KEYS = ['host', 'port', 'scheme'];
 
-    public static function fromConfig(Repository $config): \Elastic\Elasticsearch\ClientBuilder
+    public static function fromConfig(Repository $config): ClientBuilder
     {
-        $builder = \Elastic\Elasticsearch\ClientBuilder::create();
+        $builder = ClientBuilder::create();
 
         $hostConnectionProperties = array_filter(
             $config->get('explorer.connection'),
